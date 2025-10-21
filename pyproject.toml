@@ -1,0 +1,16 @@
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dqn-adaptive-cpu-scheduler"
+version = "0.1.0"
+description = "Adaptive Task Scheduling in Multi-Core CPUs using DQN"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Your Name"}]
+dependencies = ["torch>=2.1.0", "numpy>=1.24", "matplotlib>=3.8", "PyYAML>=6.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

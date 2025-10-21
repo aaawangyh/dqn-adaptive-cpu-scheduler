@@ -1,0 +1,36 @@
+
+seed: 123
+env:
+  cores: 8
+  max_queue: 64
+  dvfs_levels: [0.6, 0.8, 1.0]
+  preemption_cost: 0.001
+  slice: 1
+  max_steps: 5000
+  thermal_tau: 0.995
+  arrival_rate: 0.9
+  task:
+    exec_mean: 40
+    exec_std: 15
+    deadline_slack_mean: 30
+    deadline_slack_std: 10
+agent:
+  gamma: 0.99
+  lr: 2.5e-4
+  batch_size: 256
+  buffer_capacity: 200000
+  start_learning: 5000
+  train_steps: 200000
+  target_update: 2000
+  eps: {start: 1.0, end: 0.05, decay: 50000}
+  double_dqn: true
+  dueling: true
+  per_alpha: 0.6
+reward:
+  w_lat: 1.0
+  w_dead: 4.0
+  w_en: 0.5
+  w_ctx: 0.2
+logging:
+  out_dir: artifacts
+  tag: dqn_default
